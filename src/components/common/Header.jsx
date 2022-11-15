@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import issueAPI from '../server/api';
+import issueAPI from '../../server/api';
 import styled from 'styled-components';
 
 const Header = () => {
@@ -21,17 +21,17 @@ const Header = () => {
 };
 
 export const StyledHeader = styled.header`
-  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
-  height: 60px;
+  text-align: center;
+  height: 70px;
   background-color: #24292e;
   color: #fff;
+  font-size: 1.5rem;
+  line-height: 2.5;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    height: 100px;
   }
 `;
 

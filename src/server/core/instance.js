@@ -1,5 +1,9 @@
 import axios from 'axios';
 
 export const instance = axios.create({
-  baseURL: 'https://api.github.com/repos/angular/angular-cli',
+  baseURL: process.env.REACT_APP_GITHUB_API_URL,
+  headers: {
+    Accept: 'application/vnd.github.v3+json',
+    Authorization: `token ${process.env.REACT_APP_GITHUB_API_TOKEN}`,
+  },
 });
