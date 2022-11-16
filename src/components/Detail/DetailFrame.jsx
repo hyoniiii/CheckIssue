@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import issueAPI from '../../server/api';
 import IssueContent from './IssueContent';
 import IssueInfo from './IssueInfo';
+import Spinner from '../common/Spinner';
 
 const DetailFrame = () => {
   const { id } = useParams();
@@ -28,7 +29,7 @@ const DetailFrame = () => {
   return (
     <StDetailFrame>
       {isLoading ? (
-        <div>로딩중</div>
+        <Spinner />
       ) : (
         <>
           <IssueInfo issue={issue} />

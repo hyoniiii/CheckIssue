@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import issueAPI from '../../server/api';
 import ListItem from './ListItem';
 import Advertisement from './Advertisement';
+import Spinner from '../common/Spinner';
 
 const ListFrame = () => {
   const [issues, setIssues] = useState([]);
@@ -29,15 +30,21 @@ const ListFrame = () => {
     setLoading(true);
     issueAPI
       .getIssues(page)
-      .then(({ data }) => {
+      .then((res) => {
+        if (res.data.length === 0) {
+          setHasMore(false);
+          return;
+        }
         setIssues((prevIssues) => {
-          return [...new Set([...prevIssues, ...data])];
+          return [...new Set([...prevIssues, ...res.data])];
         });
-        setHasMore(data.length > 0);
-        setLoading(false);
+        setHasMore(true);
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, [page]);
 
@@ -55,6 +62,7 @@ const ListFrame = () => {
             }
           }
         })}
+      {loading && <Spinner />}
     </ListFrameBlock>
   );
 };
