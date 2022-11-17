@@ -4,10 +4,10 @@
 ## 🕝 Update - v2
 ### 🧑‍💻 추가 구현 중인 사항
 
-#### 인피니티 스크롤 : Intersection Observer API
+#### 💭 인피니티 스크롤 : Intersection Observer API
 - 타겟 요소와 상위 요소 또는 최상위 document 의 viewport 사이의 intersection 내의 변화를 비동기적으로 관찰하여 scroll event 방식의 단점인 불필요한 API 요청을 줄이고 에러 방지
 
-#### Context API
+#### 💭 Context API
 - Reducer를 사용하여 상태관리
 - props를 넘겨주지 않아도 각 component에서 전역적으로 관리되는 데이터를 필요한 곳에서만 사용 가능
 
@@ -25,7 +25,7 @@
 
 ### 🔗 배포 링크
 
-[CheckIssue](http://team5-checkissue.s3-website.ap-northeast-2.amazonaws.com/)
+[CheckIssue](http://wanted-checkissue.s3-website.ap-northeast-2.amazonaws.com)
 
 ### 🏁 프로젝트 실행 방법
 
