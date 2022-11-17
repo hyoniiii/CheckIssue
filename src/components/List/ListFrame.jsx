@@ -4,6 +4,7 @@ import issueAPI from '../../server/api';
 import ListItem from './ListItem';
 import Advertisement from './Advertisement';
 import Spinner from '../common/Spinner';
+// import { useIssue } from '../../contexts/IssueContext';
 
 const ListFrame = () => {
   const [issues, setIssues] = useState([]);
@@ -11,7 +12,7 @@ const ListFrame = () => {
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(false);
   const observer = useRef();
-
+  // const { issues, setIssues } = useIssue();
   const lastIssueElementRef = useCallback(
     (node) => {
       if (loading) return;
